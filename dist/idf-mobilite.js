@@ -173,10 +173,7 @@ class IDFMobiliteCard extends LitElement {
                                             </div>
                                         </div>
                                         <div class="rer-line-destination">
-                                            ${trains[train][trainDestination][trainLine].destinationName.startsWith("Gare d") ?
-                                                html`<div class="bus-destination-name">${trains[train][trainDestination][trainLine].destinationName.substring(7, trains[train][trainDestination][trainLine].destinationName.length).trim()}</div><div class="bus-destination-img"><img src="${imagesUrl}general/train${this.config.wall_panel === true ? "_white" : ""}.png" class="bus-destination-image"/></div>`
-                                                : html`${trains[train][trainDestination][trainLine].destinationName}${trains[train][trainDestination][trainLine].destinationName.endsWith("Chessy") > 0 ? html`<div class="bus-destination-img"><img src="${imagesUrl}general/mickey${this.config.wall_panel === true ? "_white" : ""}.png" class="bus-destination-image"/></div>` : ""}`
-                                            }
+                                            ${html`${trains[train][trainDestination][trainLine].destinationName}`}
                                         </div>
                                         <div class="rer-line-departure">
                                             ${trains[train][trainDestination][trainLine].nextDeparture > 0 ?
